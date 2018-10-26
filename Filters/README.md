@@ -3,10 +3,10 @@ and an implementation of convolution
 
 the project contains 3 main packages: Basics, Filters, and Test
 
-in the Basics Package, we have the imageIO class that give us the main methods to interact with the files and read images 
-convert them to Matrix and converting Matrix to images, methods to visualization of the result by Java Swing and
+in the Basics Package, we have the imageIO class that gives us the main methods to interact with the files and read images,
+convert them to Matrix and converting Matrix to images and some methods to visualization of the result with Java Swing 
 
-the next class OPs contains some useful methods like basic convolution in n^2 * m^2 order and Matrix Functions
+next class OPs contains some useful methods like basic convolution in n^2 * m^2 order and Matrix Functions
 
 one of the questions in the project was reducing convolution order so :
 
