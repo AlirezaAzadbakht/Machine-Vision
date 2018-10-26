@@ -40,12 +40,11 @@ all the filters have the .getResult() function so after calling the constructor 
 
 the result of our convolution implementation for our Benchmark image 
 
-IMAGE.TEST
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/BenchMark.jpg)
 
-was 
+is 
 
-ConvolutionIMAGE
-
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/ConvolutionResult.jpg)
 
 ## SOBEL FILTER
 
@@ -62,11 +61,11 @@ public SobelFilter(int imageMatrix[][]) {
 ```
 and the Kernel Matrix are :
 
-Kernel.IMAGE
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/SobelKernel.png)
 
 the result for BenchMark image :
 
-
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/SobelResult.jpg)
 
 ## CANNY FILTER
 
@@ -108,6 +107,7 @@ the steps are simple as listed in Wikipedia
 
 the result for BenchMark image :
 
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/CannyResult.jpg)
 
 ## HOUGH TRANSFORMATION
 
@@ -154,13 +154,19 @@ the result for BenchMark image :
 
 Contrast 1
 
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/HoughResultC1.jpg)
 
+Contrast 10
+
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/HoughResultC10.jpg)
 
 Contrast 50
 
-
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/HoughResultC50.jpg)
 
 Contrast 100
+
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/HoughResultC100.jpg)
 
 
 
