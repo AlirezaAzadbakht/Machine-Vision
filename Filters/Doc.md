@@ -16,7 +16,8 @@ every iteration of convolution contains the summation of m^2-(2*m) last iteratio
 
 in this case, the order reduces to n^2*(2*m) so it will be run in O(n^2*m)
 
-[[https://github.com/AlierzaAzadbakht/Machine-Vision/Filters/images/ConvolutionExpl.jpg|alt=octocat]]
+![alt tag](https://github.com/AlirezaAzadbakht/Machine-Vision/blob/master/Filters/images/ConvolutionExpl.jpg
+)
 
 our Test Classes are simple
 
