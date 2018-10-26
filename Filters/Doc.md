@@ -8,7 +8,7 @@ convert them to Matrix and converting Matrix to images, methods to visualization
 
 the next class OPs contains some useful methods like basic convolution in n^2 * m^2 order and Matrix Functions
 
-one of the questions in the project was that we reduce convolution order so :
+one of the questions in the project was reducing convolution order so :
 
 # reducing Convolution order:
 
