@@ -8,7 +8,9 @@ convert them to Matrix and converting Matrix to images, methods to visualization
 
 the next class OPs contains some useful methods like basic convolution in n^2 * m^2 order and Matrix Functions
 
-# one of the questions in the project was that we reduce convolution order so :
+one of the questions in the project was that we reduce convolution order so :
+
+#reducing Convolution order:
 
 every iteration of convolution contains the summation of m^2-(2*m) last iteration so we can use the idea of rolling sum and save the last m^2-(2*m) productions and only compute the new 2*m rows 
 
