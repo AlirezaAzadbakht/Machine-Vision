@@ -10,7 +10,7 @@ the next class OPs contains some useful methods like basic convolution in n^2 * 
 
 one of the questions in the project was reducing convolution order so :
 
-# reducing Convolution order:
+## reducing Convolution order:
 
 every iteration of convolution contains the summation of m^2-(2*m) last iteration so we can use the idea of rolling sum and save the last m^2-(2*m) productions and only compute the new 2*m rows 
 
