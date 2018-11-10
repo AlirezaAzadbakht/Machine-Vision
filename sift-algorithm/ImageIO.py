@@ -1,6 +1,6 @@
 import cv2
-import numpy as np
 
+print('hello world')
 def showImage(img):
     cv2.imshow('',img)
     cv2.waitKey(0)
