@@ -2,10 +2,10 @@ import cv2
 import ImageIO as io
 import math
 
-img =io.getImage("benchMark.jpg")
+img =io.getImage("test2.jpg")
 Octaves=[]
 io.showImage(img)
-b=1/2
+b= 1/2
 for x in range(4):
     List = []
     a=b

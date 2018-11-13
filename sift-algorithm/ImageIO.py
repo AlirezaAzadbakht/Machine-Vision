@@ -7,4 +7,4 @@ def showImage(img):
     cv2.destroyAllWindows()
 
 def getImage(name):
-    return cv2.imread('benchMark.jpg', 0)
+    return cv2.imread(name, 0)
