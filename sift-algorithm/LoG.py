@@ -1,5 +1,7 @@
 import ImageIO as io
+
 DoG = []
+
 
 def calculateLoG(octaves):
     for octave in octaves:
