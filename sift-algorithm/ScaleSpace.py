@@ -6,14 +6,17 @@ import math
 def getOctaves():
     img = io.getImage("test2.jpg")
     Octaves = []
-    io.showImage(img)
-    b = 1 / 2
+    b = 0.5
+    print(b)
     for x in range(4):
         List = []
         a = b
+        print(a)
         for y in range(5):
             a = a * math.sqrt(2)
-            List.append(cv2.GaussianBlur(img, (5, 5), sigmaX=a, sigmaY=0, borderType=1))
+            List.append(cv2.GaussianBlur(img, (5, 5), a))
+            print(a)
+            io.showImage(List[y])
         b *= 2
         Octaves.append(List)
         height, width = img.shape[:2]

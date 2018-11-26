@@ -1,13 +1,29 @@
 import ImageIO as io
+DoGOctaves=[]
+def getDoGOctaves(octaves):
+    counter = 0
+    for list in octaves:
+        nlist=[]
+        for i in range(4):
 
-DoG = []
+            a = list[i+1]
+            b = list[i]
+
+            height, width = a.shape[:2]
+            for k in range(width):
+                for j in range(height):
+                    if b[j][k] < a[j][k]:
+                        b[j][k] = 0
+                    else:
+                        b[j][k] = b[j][k] - a[j][k]
+                        if b[j][k] > 0:
+                            counter +=1
+                            
+            nlist.append(b)
+            print(counter)
+
+        DoGOctaves.append(nlist)
+        print(counter)
 
 
-def calculateLoG(octaves):
-    for octave in octaves:
-        DoG.append(octave[1] - octave[0])
-        DoG.append(octave[2] - octave[1])
-        DoG.append(octave[3] - octave[2])
-        DoG.append(octave[4] - octave[3])
-    for i in DoG:
-        io.showImage(i)
+    return DoGOctaves

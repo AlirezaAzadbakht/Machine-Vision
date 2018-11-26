@@ -4,9 +4,7 @@ import LoG as log
 
 octaves = scale_space.getOctaves()
 
-for li in octaves:
-    for x in li:
-        io.showImage(x)
-        print(x)
-
-log.calculateLoG(octaves)
+test = log.getDoGOctaves(octaves)
+for octaves in test:
+	for i in octaves:
+		io.showImage(i)
