@@ -1,49 +1,51 @@
-import ScaleSpace as scale_space
-DoGOctaves = scale_space.getOctaves()
+# import ScaleSpace as scale_space
+# DoGOctaves = scale_space.getOctaves()
 
-KeypointsOctaves=[]
+KeypointsOctaves = []
 
-for list in DoGOctaves:
-    nextgenlist=[]
-    for i in range(2):
-        a = list[i]
-        b = list[i + 1]
-        c = list[i + 2]
-        result = b
-        height, width = b.shape[:2]
-        for jj in range(width):
-
-                for kk in range(height) :
+def findPoints(poinsts):
+    for dog_octaves in poinsts:
+        nextgenlist=[]
+        for sacle in range(2):
+            a = dog_octaves[sacle]
+            b = dog_octaves[sacle + 1]
+            c = dog_octaves[sacle + 2]
+            result = b
+            height, width = b.shape[:2]
+            print(width, height)
+            for jj in range(height):
+                for kk in range(width):
+                    # print(jj, kk)
                     target = b[jj][kk]
-                    list[]
-
+                    window = []
                     for i in range(3):
                         for j in range(3):
                             try:
-                                list.append(a[jj-1 +i][kk-1 +jw])
-
+                                window.append(a[jj-1 +i][kk-1 +j])
+                            except:
+                                print('error1')
                     for i in range(3):
                         for j in range(3):
                             try:
                                 if i != 1 and j!= 1:
-                                    list.append(b[jj - 1 + i][kk - 1 + j])
-
-
+                                    window.append(b[jj - 1 + i][kk - 1 + j])
+                            except:
+                                print('error2')
                     for i in range(3):
                         for j in range(3):
                             try:
-                                list.append(c[jj - 1 + i][kk - 1 + j])
-
-
-                    tmax = max(list)
-                    tmin = min(list)
+                                window.append(c[jj - 1 + i][kk - 1 + j])
+                            except:
+                                print('error3')
+                    tmax = max(window)
+                    tmin = min(window)
                     if target > tmax:
                         result[jj][kk] = target
-                    else if target < tmin:
+                    elif target < tmin:
                         result[jj][kk] = target
                     else:
                         result[jj][kk] = 0
-
-        nextgenlist.append(result)
-    KeypointsOctaves.append(nextgenlist)
+            nextgenlist.append(result)
+        KeypointsOctaves.append(nextgenlist)
+    return KeypointsOctaves
     

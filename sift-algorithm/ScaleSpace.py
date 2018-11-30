@@ -7,15 +7,14 @@ def getOctaves():
     img = io.getImage("test2.jpg")
     Octaves = []
     b = 0.5
-    print(b)
+    # print(b)
     for x in range(4):
         List = []
         a = b
-        print(a)
+        # print(a)
         for y in range(5):
             a = a * math.sqrt(2)
             List.append(cv2.GaussianBlur(img, (5, 5), a))
-            print(a)
             io.showImage(List[y])
         b *= 2
         Octaves.append(List)
