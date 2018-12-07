@@ -3,6 +3,9 @@ import ImageIO as io
 import LoG as log
 import findingKeyPoint as key_point
 import gettingRideOfLowContrastKeypoints as decrese_keypoints
+import KeypointOrientations as key_orientation
+import GenerateFeature as gn
+
 
 img = io.getImage("test2.jpg")
 
@@ -14,6 +17,6 @@ points = key_point.findPoints(octaves)
 
 points = decrese_keypoints.removeEdge(points, octaves)
 
-# for i in enumerate(points):
-#     for j in enumerate(i):
-#         print(i + " :" + j )
+oriented_points = key_orientation.orientations(points, octaves)
+
+final_points = gn.generate_feature(oriented_points, points, octaves)
