@@ -1,12 +1,13 @@
 import ImageIO as io
-DoGOctaves=[]
+DoGOctaves = []
+
 def getDoGOctaves(octaves):
     counter = 0
     for list in octaves:
-        nlist=[]
+        nlist = []
         for i in range(4):
 
-            a = list[i+1]
+            a = list[i + 1]
             b = list[i]
 
             height, width = a.shape[:2]
@@ -17,13 +18,14 @@ def getDoGOctaves(octaves):
                     else:
                         b[j][k] = b[j][k] - a[j][k]
                         if b[j][k] > 0:
-                            counter +=1
-                            
+                            counter += 1
+                            # b[j][k] = 255
+
             nlist.append(b)
+            # io.showImage(b)
             print(counter)
 
         DoGOctaves.append(nlist)
-        print(counter)
-
+        # print(counter)
 
     return DoGOctaves
