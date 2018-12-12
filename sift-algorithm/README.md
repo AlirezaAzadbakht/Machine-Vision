@@ -6,6 +6,7 @@ First of all in this project , we try to implement scale-invariant feature trans
  `ImageIO.py` contains some functions for reading image with openCv .
  
  ##main
+ 
  in `main.py` we import all  steps of SIFT from SiftSteps.  
  
     img = io.getImage("test2.jpg")
