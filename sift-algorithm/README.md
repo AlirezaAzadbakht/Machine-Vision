@@ -5,7 +5,7 @@ First of all in this project , we try to implement scale-invariant feature trans
  SiftSteps module contains six file , each step implement in of file then all of them import in` main.py` .
  `ImageIO.py` contains some functions for reading image with openCv .
  
- ##main
+## main
  
  in `main.py` we import all  steps of SIFT from SiftSteps.  
  
