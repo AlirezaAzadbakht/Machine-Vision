@@ -1,17 +1,13 @@
-import ScaleSpace as scale_space
+from SiftSteps import LoG, ScaleSpace as scale_space, findingKeyPoint as key_point, \
+    gettingRideOfLowContrastKeypoints as decrese_keypoints, GenerateFeature as gn, \
+    KeypointOrientations as key_orientation
 import ImageIO as io
-import LoG as log
-import findingKeyPoint as key_point
-import gettingRideOfLowContrastKeypoints as decrese_keypoints
-import KeypointOrientations as key_orientation
-import GenerateFeature as gn
-
 
 img = io.getImage("test2.jpg")
 
 octaves = scale_space.getOctaves(img)
 
-log_approximations = log.getDoGOctaves(octaves)
+log_approximations = LoG.getDoGOctaves(octaves)
 
 points = key_point.findPoints(octaves)
 
