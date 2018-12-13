@@ -56,7 +56,7 @@ index of list is a list that contain blurred images with differents scales.
 `getDoGOctaves` in `LoG.py`  get octaves as parameters that made with `getOctaves` functions and return
 Laplacian of Gaussian (LoG).(four octave and each octave contains four scale)
 
-
+```Python
     def getDoGOctaves(octaves):
     counter = 0
     for list in octaves:
@@ -82,6 +82,7 @@ Laplacian of Gaussian (LoG).(four octave and each octave contains four scale)
         DoGOctaves.append(nlist)
 
     return DoGOctaves
+```
     
     
 this image is for first scale of first octave 
@@ -96,7 +97,13 @@ this image is for first scale of second octave
 
 ![alt text](https://cdn.pbrd.co/images/HRzJsfm.png)
 
-because of many images made we show just three example of images .
+because of many images made we show just three example of images.
+
+### Finding KeyPoints
+
+
+
+
 
 
 

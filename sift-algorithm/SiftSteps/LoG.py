@@ -25,7 +25,7 @@ def getDoGOctaves(octaves):
                             # b[j][k] = 255
 
             nlist.append(b)
-            io.showImage(b)
+            # io.showImage(b)
             print(counter)
 
         DoGOctaves.append(nlist)

@@ -19,23 +19,20 @@ def findPoints(poinsts):
                             try:
                                 window.append(a[jj - 1 + i][kk - 1 + j])
                             except:
-                                # TODO : handle this part
-                                print('error1')
+                                print('')
                     for i in range(3):
                         for j in range(3):
                             try:
                                 if i != 1 and j != 1:
                                     window.append(b[jj - 1 + i][kk - 1 + j])
                             except:
-                                # TODO : handle this part
-                                print('error2')
+                                print('')
                     for i in range(3):
                         for j in range(3):
                             try:
                                 window.append(c[jj - 1 + i][kk - 1 + j])
                             except:
-                                # TODO : handle this part
-                                print('error3')
+                                print('')
                     tmax = max(window)
                     tmin = min(window)
                     if target > tmax:
