@@ -1,7 +1,10 @@
-from SiftSteps import LoG, ScaleSpace as scale_space, findingKeyPoint as key_point, \
-    gettingRideOfLowContrastKeypoints as decrese_keypoints, GenerateFeature as gn, \
-    KeypointOrientations as key_orientation
 import ImageIO as io
+from SiftSteps import LoG,\
+               ScaleSpace as scale_space, \
+               findingKeyPoint as key_point, \
+               gettingRideOfLowContrastKeypoints as decrese_keypoints,\
+               GenerateFeature as gn, \
+               KeypointOrientations as key_orientation
 
 img = io.getImage("test2.jpg")
 

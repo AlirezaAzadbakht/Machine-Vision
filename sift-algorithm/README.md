@@ -10,6 +10,15 @@ First of all in this project , we try to implement scale-invariant feature trans
  in `main.py` we import all  steps of SIFT from SiftSteps.  
  
  ```Python
+ 
+    import ImageIO as io
+    from SiftSteps import LoG,\
+               ScaleSpace as scale_space, \
+               findingKeyPoint as key_point, \
+               gettingRideOfLowContrastKeypoints as decrese_keypoints,\
+               GenerateFeature as gn, \
+               KeypointOrientations as key_orientation
+               
     img = io.getImage("test2.jpg")
 
     octaves = scale_space.getOctaves(img)
