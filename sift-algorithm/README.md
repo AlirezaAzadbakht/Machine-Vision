@@ -178,8 +178,8 @@ above image are keyPoint of second scale of second octave ( for show clearer key
     
 ### Getting Rid Of Low Contrast KeyPoints
 
-we know that all keyPoints not good for us . in this step we remove some keyPoints that are not sutiable.
-`removeEdge` function do this and has two argument , first one is keyPoints obtained from perevios step 
+we know that all keyPoints are not good for us . in this step we remove some keyPoints that are not sutiable, so we implement harris 
+for removing edge , `removeEdge` function do this and has two argument, first one is keyPoints obtained from perevios step 
 and second argument is octaves .
 
      
@@ -212,6 +212,14 @@ and second argument is octaves .
         return keypoints
     
 ```
+
+this image is keyPoints of second scale of first octaves 
+
+![alt text](https://cdn.pbrd.co/images/HRAut7J.png)
+
+and this for second scale of second octaves
+
+![alt text](https://cdn.pbrd.co/images/HRAw5S4.png)
 
     
     
