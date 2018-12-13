@@ -16,3 +16,4 @@ points = decrese_keypoints.removeEdge(points, octaves)
 oriented_points = key_orientation.orientations(points, octaves)
 
 final_points = gn.generate_feature(oriented_points, points, octaves)
+

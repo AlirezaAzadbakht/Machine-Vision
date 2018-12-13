@@ -37,6 +37,6 @@ def generate_feature(key_list, points, scale_spaces):
                                 if ((degree - 1) / 4) * math.pi <= tetha < (degree / 4) * math.pi:
                                     orients[l] += 1
 
-                    featrure.append(orients)
-            featrue_points.append(featrure)
-    return featrue_points
+                    featrue_points.append(orients)
+            featrure.append(featrue_points)
+    return featrure

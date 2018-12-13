@@ -48,7 +48,47 @@ from `ScaleSpace.py` in SiftSteps module and pass image that read with `getImage
         return octaves 
         
 `getOctaves` in ScaleSpace makes octaves and scales needed and return a list with length of four so that each 
-index of list is list that contain blurred with differents scales.
+index of list is a list that contain blurred images with differents scales.
+(return four octaves. each octaves has 5 scale (image))
+
+### LoG approximations
+
+`getDoGOctaves` in `LoG.py`  get octaves as parameters that made with `getOctaves` functions and return
+Laplacian of Gaussian (LoG).(four octave and each octave contains four scale)
+
+
+    def getDoGOctaves(octaves):
+    counter = 0
+    for list in octaves:
+        nlist = []
+        for i in range(4):
+
+            a = list[i + 1]
+            b = list[i]
+
+            height, width = a.shape[:2]
+            for k in range(width):
+                for j in range(height):
+                    if b[j][k] < a[j][k]:
+                        b[j][k] = 0
+                    else:
+                        b[j][k] = b[j][k] - a[j][k]
+                        if b[j][k] > 0:
+                            counter += 1
+
+            nlist.append(b)
+            print(counter)
+
+        DoGOctaves.append(nlist)
+
+    return DoGOctaves
+    
+
+
+
+
+
+
   
  
  

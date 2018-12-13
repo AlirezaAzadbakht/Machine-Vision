@@ -1,7 +1,10 @@
 import ImageIO as io
+
 DoGOctaves = []
 
+
 def getDoGOctaves(octaves):
+    print('LOG')
     counter = 0
     for list in octaves:
         nlist = []
@@ -22,7 +25,7 @@ def getDoGOctaves(octaves):
                             # b[j][k] = 255
 
             nlist.append(b)
-            # io.showImage(b)
+            io.showImage(b)
             print(counter)
 
         DoGOctaves.append(nlist)
