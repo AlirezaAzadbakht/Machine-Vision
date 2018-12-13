@@ -36,11 +36,11 @@ def findPoints(poinsts):
                     tmax = max(window)
                     tmin = min(window)
                     if target > tmax:
-                        # result[jj][kk] = target
-                        result[jj][kk] = 255
+                        result[jj][kk] = target
+                        # result[jj][kk] = 255
                     elif target < tmin:
-                        # result[jj][kk] = target
-                        result[jj][kk] = 255
+                        result[jj][kk] = target
+                        # result[jj][kk] = 255
                     else:
                         result[jj][kk] = 0
             print('how keypoints')
