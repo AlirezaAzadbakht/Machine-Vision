@@ -83,8 +83,23 @@ Laplacian of Gaussian (LoG).(four octave and each octave contains four scale)
 
     return DoGOctaves
     
+    
+this image is for first scale of first octave 
 
-![alt text](https://pasteboard.co/HRzH5GY.png)
+![alt text](https://cdn.pbrd.co/images/HRzH5GY.png) 
+
+this image is for second scale of first octave
+
+![alt text](https://cdn.pbrd.co/images/HRzIr2r.png)
+
+this image is for first scale of second octave
+
+![alt text](https://cdn.pbrd.co/images/HRzJsfm.png)
+
+because of many images made we show just three example of images .
+
+
+
 
 
 
