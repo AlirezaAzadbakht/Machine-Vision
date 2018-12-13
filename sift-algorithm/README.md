@@ -84,7 +84,7 @@ Laplacian of Gaussian (LoG).(four octave and each octave contains four scale)
     return DoGOctaves
     
 
-
+![alt text](https://pasteboard.co/HRzH5GY.png)
 
 
 
