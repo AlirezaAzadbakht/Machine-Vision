@@ -9,6 +9,7 @@ First of all in this project , we try to implement scale-invariant feature trans
  
  in `main.py` we import all  steps of SIFT from SiftSteps.  
  
+ ```Python
     img = io.getImage("test2.jpg")
 
     octaves = scale_space.getOctaves(img)
@@ -22,6 +23,7 @@ First of all in this project , we try to implement scale-invariant feature trans
     oriented_points = key_orientation.orientations(points, octaves)
 
     final_points = gn.generate_feature(oriented_points, points, octaves)
+```
 
 in first line we read image with `getImage` function in `ImageIO.py`. in the next line we call `getOctaves` function 
 from `ScaleSpace.py` in SiftSteps module and pass image that read with `getImage` in it
@@ -29,6 +31,7 @@ from `ScaleSpace.py` in SiftSteps module and pass image that read with `getImage
  ### The scale space
  in first step we must make scale spaces of image, make four octave and each octave has 5 scale.
     
+```Python
     def getOctaves(img):
         octaves = []
         b = 0.5
@@ -46,6 +49,7 @@ from `ScaleSpace.py` in SiftSteps module and pass image that read with `getImage
             height, width = img.shape[:2]
             img = cv2.resize(img, (int(width / 2), int(height / 2)), interpolation=cv2.INTER_AREA)
         return octaves 
+```
         
 `getOctaves` in ScaleSpace makes octaves and scales needed and return a list with length of four so that each 
 index of list is a list that contain blurred images with differents scales.
