@@ -64,7 +64,8 @@ we use above image as our benchmark image
             img = cv2.resize(img, (int(width / 2), int(height / 2)), interpolation=cv2.INTER_AREA)
         return octaves 
 ```
-we use these numbers to blur each scale:
+we blured our scales based on these numbers:
+
 ![alt text](http://aishack.in/static/img/tut/sift-abs-sigma-matrix.jpg)
         
 `getOctaves` in ScaleSpace makes octaves and scales needed and return a list with length of four so that each 
