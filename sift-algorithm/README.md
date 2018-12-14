@@ -1,3 +1,6 @@
+ ## SIFT
+ ### Scale-invariant feature transform
+
 in this project , we implement scale-invariant feature transform (SIFT) a feature detection algorithm .
 
 
