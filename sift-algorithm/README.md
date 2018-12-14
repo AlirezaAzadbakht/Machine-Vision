@@ -1,4 +1,4 @@
-First of all in this project , we try to implement scale-invariant feature transform (SIFT) a feature detection algorithm .
+in this project , we implement scale-invariant feature transform (SIFT) a feature detection algorithm .
 
 
 
@@ -43,7 +43,7 @@ from `ScaleSpace.py` in SiftSteps module and pass image that read with `getImage
 we use above image as our benchmark image
  
  ### The scale space
- in first step we must make scale spaces of image, make four octave and each octave has 5 scale.
+ in first step we must make scale spaces of image, make four octaves and each octave has 5 scales.
     
 ```Python
     def getOctaves(img):
@@ -64,6 +64,8 @@ we use above image as our benchmark image
             img = cv2.resize(img, (int(width / 2), int(height / 2)), interpolation=cv2.INTER_AREA)
         return octaves 
 ```
+we use these numbers to blur each scale:
+![alt text](http://aishack.in/static/img/tut/sift-abs-sigma-matrix.jpg)
         
 `getOctaves` in ScaleSpace makes octaves and scales needed and return a list with length of four so that each 
 index of list is a list that contain blurred images with differents scales.
@@ -353,7 +355,10 @@ at last we generate feature . `generate_feature` in GenerateFeature do this .
         return featrure
 ```
 
-finish :)
+
+our main refrence in this project was the toutorial of sift by AI Shack
+
+http://aishack.in/tutorials/sift-scale-invariant-feature-transform-introduction/
 
 
 
