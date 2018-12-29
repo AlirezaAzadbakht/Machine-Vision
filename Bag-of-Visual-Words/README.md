@@ -23,19 +23,16 @@ this implementation follows these simple steps :
 ## 1 . Getting descriptor
 with the help of sift algorithm we get all the images in **Caltech  101_ObjectCategories** and save them in a list
  ```Python
- descriptor_list = []  
-    images = []  
-    labels = []  
-    for filename1 in glob.glob('101_ObjectCategories/*'):  
-      	for filename in glob.glob(filename1 + '/train/*.jpg'):  
-     		 im = cv2.imread(filename)  
-     		 labels.append(filename1[21:])  
-     		 images.append(im)  
-     		 image = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)  
-     		 keypoint, descriptor = m.features(image, extractor)  
-     		 for i in descriptor:  
-    			  descriptor_list.append(i)
-  ```
+ for filename1 in glob.glob('101_ObjectCategories/*'):
+    for filename in glob.glob(filename1 + '/*.jpg'):
+        im = cv2.imread(filename)
+        labels.append(filename1[21:])
+        images.append(im)
+        image = cv2.cvtColor(im, cv2.COLOR_BGR2GRAY)
+        keypoint, descriptor = m.features(image, extractor)
+        for i in descriptor:
+            descriptor_list.append(i)
+ ```
 
     
 
