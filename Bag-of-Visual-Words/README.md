@@ -105,11 +105,11 @@ def findTopNearest(histograms, targetHistogram, labels, top):
 
 # Results
 
-for k = 50:
+for cluster center k  = 50:
 
 if the top result for test image be the same as real label its true the result was  **24 %** correct
 
-for k = 150:
+for cluster center k = 150:
 
 if the top result for test image be the same as real label its true the result was  **24 %** correct
 
