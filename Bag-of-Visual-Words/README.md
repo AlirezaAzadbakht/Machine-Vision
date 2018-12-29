@@ -101,6 +101,11 @@ def findTopNearest(histograms, targetHistogram, labels, top):
     
 
 # Results
+
+ ```
+Bag Of Word result : ['airplanes', 'airplanes', 'bass', 'ant', 'bass']
+Labels : airplanes
+ ```
 we test our BoVW implementation in two ways:
 
 if the top result for test image be the same as real label its true the result was  **Folan %** correct 
