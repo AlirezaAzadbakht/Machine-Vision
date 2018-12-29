@@ -38,7 +38,7 @@ with the help of sift algorithm we get all the images in **Caltech  101_ObjectCa
 
     
 
-## 2. Run K-means clustering on descriptor list
+## 2. executing K-means clustering on descriptor list
 
 as the steps in Wikipedia said we use K-means clustering algorithm and use the cluster centers in the next step where we use them to create a histogram of images 
  ```Python
