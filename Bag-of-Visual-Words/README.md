@@ -105,12 +105,121 @@ def findTopNearest(histograms, targetHistogram, labels, top):
 
 # Results
 
- ```
-Bag Of Word result : ['airplanes', 'airplanes', 'bass', 'ant', 'bass']
-Label : airplanes
- ```
-we test our BoVW implementation in two ways:
+for k = 50:
 
-if the top result for test image be the same as real label its true the result was  **Folan %** correct 
+if the top result for test image be the same as real label its true the result was  **24 %** correct
 
-if the result set has more than the half of true labels its true the result was **Folan %** correct
+for k = 150:
+
+if the top result for test image be the same as real label its true the result was  **24 %** correct
+
+
+the reason we get this result is we use 50 centers in Kmeans and it is not enough to cover dataset 
+
+it is obvious if we increase centers it took more time to learn and get better results
+
+console output :
+
+```
+Bag Of Word result : ['airplanes', 'airplanes', 'bass', 'barrel', 'ant']
+real Label : airplanes
+true
+-------------------------
+Bag Of Word result : ['airplanes', 'bass', 'airplanes', 'ant', 'barrel']
+real Label : airplanes
+true
+-------------------------
+Bag Of Word result : ['bass', 'bass', 'ant', 'airplanes', 'airplanes']
+real Label : airplanes
+false
+-------------------------
+Bag Of Word result : ['airplanes', 'airplanes', 'barrel', 'ant', 'bass']
+real Label : airplanes
+true
+-------------------------
+Bag Of Word result : ['bass', 'airplanes', 'barrel', 'anchor', 'ant']
+real Label : airplanes
+false
+-------------------------
+Bag Of Word result : ['bass', 'ant', 'bass', 'airplanes', 'airplanes']
+real Label : anchor
+false
+-------------------------
+Bag Of Word result : ['barrel', 'airplanes', 'barrel', 'airplanes', 'airplanes']
+real Label : anchor
+false
+-------------------------
+Bag Of Word result : ['anchor', 'barrel', 'bass', 'airplanes', 'anchor']
+real Label : anchor
+true
+-------------------------
+Bag Of Word result : ['ant', 'barrel', 'airplanes', 'ant', 'airplanes']
+real Label : anchor
+false
+-------------------------
+Bag Of Word result : ['airplanes', 'airplanes', 'bass', 'barrel', 'airplanes']
+real Label : anchor
+false
+-------------------------
+Bag Of Word result : ['ant', 'barrel', 'airplanes', 'ant', 'airplanes']
+real Label : ant
+true
+-------------------------
+Bag Of Word result : ['ant', 'airplanes', 'airplanes', 'ant', 'anchor']
+real Label : ant
+true
+-------------------------
+Bag Of Word result : ['anchor', 'airplanes', 'barrel', 'barrel', 'bass']
+real Label : ant
+false
+-------------------------
+Bag Of Word result : ['bass', 'ant', 'airplanes', 'airplanes', 'ant']
+real Label : ant
+false
+-------------------------
+Bag Of Word result : ['airplanes', 'anchor', 'barrel', 'bass', 'anchor']
+real Label : ant
+false
+-------------------------
+Bag Of Word result : ['airplanes', 'bass', 'bass', 'airplanes', 'ant']
+real Label : barrel
+false
+-------------------------
+Bag Of Word result : ['airplanes', 'ant', 'bass', 'bass', 'ant']
+real Label : barrel
+false
+-------------------------
+Bag Of Word result : ['bass', 'ant', 'airplanes', 'bass', 'airplanes']
+real Label : barrel
+false
+-------------------------
+Bag Of Word result : ['ant', 'airplanes', 'bass', 'anchor', 'barrel']
+real Label : barrel
+false
+-------------------------
+Bag Of Word result : ['ant', 'barrel', 'airplanes', 'ant', 'barrel']
+real Label : barrel
+false
+-------------------------
+Bag Of Word result : ['ant', 'bass', 'airplanes', 'anchor', 'bass']
+real Label : bass
+false
+-------------------------
+Bag Of Word result : ['ant', 'airplanes', 'airplanes', 'barrel', 'bass']
+real Label : bass
+false
+-------------------------
+Bag Of Word result : ['ant', 'ant', 'bass', 'airplanes', 'airplanes']
+real Label : bass
+false
+-------------------------
+Bag Of Word result : ['ant', 'bass', 'airplanes', 'anchor', 'airplanes']
+real Label : bass
+false
+-------------------------
+Bag Of Word result : ['airplanes', 'bass', 'barrel', 'bass', 'ant']
+real Label : bass
+false
+-------------------------
+24.0
+```
