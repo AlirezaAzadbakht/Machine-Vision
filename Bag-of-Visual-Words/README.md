@@ -21,6 +21,13 @@ this project contains 3 class :
 
 both tester and trainer class use the same methods so we made Methods class for easier use 
 
+# dataset :
+![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/airplanes/test/image_0006.jpg)
+![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/anchor/test/image_0008.jpg)
+![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/bass/test/image_0009.jpg)
+![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/barrel/test/image_0006.jpg)
+![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/ant/test/image_0006.jpg)
+
 # Trainer Steps:
 
 this implementation follows these simple steps :
