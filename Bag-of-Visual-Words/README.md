@@ -1,8 +1,8 @@
 # Bag of Visual Words
 
-in this project we follow the steps in wikipedia and towarddatascience post about BoVW
 
-toward data scinece post about BoVW is not compleme and correct we just use it to get the main idea
+in this project, we follow the steps in Wikipedia and toward data science post about BoVW
+toward data science post about BoVW is not complete and correct we just use it to get the main idea
 https://towardsdatascience.com/bag-of-visual-words-in-a-nutshell-9ceea97ce0fb
 
 https://en.wikipedia.org/wiki/Bag-of-words_model_in_computer_vision
@@ -13,8 +13,7 @@ this project contains 3 class :
 	Methods
 	Tester
 
-both tester and trainer class use same methodss so we made Methods class for easier use 
-
+both tester and trainer class use the same methods so we made Methods class for easier use 
 
 # Trainer Steps:
 
@@ -36,9 +35,9 @@ with the help of sift algorithm we get all the images in **Caltech  101_ObjectCa
 
     
 
-## 2. Run Kmeans clustering on descriptor list
+## 2. Run K-means clustering on descriptor list
 
-as the steps in wikipedia said we use kmeans clustering algorihm and use the cluster centers in next step where we use them to create histogram of images 
+as the steps in Wikipedia said we use K-means clustering algorithm and use the cluster centers in the next step where we use them to create a histogram of images 
  ```Python
  kmeans = KMeans(n_clusters=ClusterNumber)
  kmeans.fit(descriptor_list)
@@ -46,7 +45,7 @@ as the steps in wikipedia said we use kmeans clustering algorihm and use the clu
     
 
 ## 3. make our visual word Bag
-now we get the image's descriptor again and compare to the cluster centers that we computed in last step and for each descriptor we plus the value of the nearest cluster center with ecducial distance
+now we get the image's descriptor again and compare to the cluster centers that we computed in the last step and for each descriptor we plus the value of the nearest cluster center with Euclidean distance
   ```Python
   for im in images:
     histograms.append(m.get_histogram(kmeans.cluster_centers_, im))
@@ -99,8 +98,8 @@ def findTopNearest(histograms, targetHistogram, labels, top):
     
 
 # Results
-we test our BoVW implemintaint in two ways:
+we test our BoVW implementation in two ways:
 
-if the top result for test image be the same as real label its true the result was  **folan %** correct 
+if the top result for test image be the same as real label its true the result was  **Folan %** correct 
 
-if the result set have more than the half of true labels its true the result was **folan %** correct
+if the result set has more than the half of true labels its true the result was **Folan %** correct
