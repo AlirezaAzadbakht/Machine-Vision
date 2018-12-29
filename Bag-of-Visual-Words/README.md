@@ -1,6 +1,9 @@
 # Bag of Visual Words
 
 
+ ![alt text](http://people.csail.mit.edu/fergus/iccv2005/bagofwords.gif)
+
+
 in this project, we follow the steps in Wikipedia and toward data science post about BoVW
 
 toward data science post about BoVW is not complete and correct we just use it to get the main idea
