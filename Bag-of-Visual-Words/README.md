@@ -40,38 +40,37 @@ with the help of sift algorithm we get all the images in **Caltech  101_ObjectCa
 
 as the steps in wikipedia said we use kmeans clustering algorihm and use the cluster centers in next step where we use them to create histogram of images 
  ```Python
- kmeans = KMeans(n_clusters=ClusterNumber)  
-    kmeans.fit(descriptor_list)
-  ```
+ kmeans = KMeans(n_clusters=ClusterNumber)
+ kmeans.fit(descriptor_list)
+ ```
     
 
 ## 3. make our visual word Bag
-now we get the image's descriptor again and compare to the cluster centers that we computed in last step and for each descriptor we plus the value of the nearest cluster center
+now we get the image's descriptor again and compare to the cluster centers that we computed in last step and for each descriptor we plus the value of the nearest cluster center with ecducial distance
   ```Python
- histograms = []  
-    for im in images:  
-      histograms.append(m.get_histogram(kmeans.cluster_centers_, im))
+  for im in images:
+    histograms.append(m.get_histogram(kmeans.cluster_centers_, im))
   ```
     
 get histogram method:
 ```Python
-     def get_histogram(centers, image):  
-      histogram = [0] * ClusterNumber  
-        im = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  
-      keypoint, descriptor = features(im, extractor)  
-      for des in descriptor:  
-      min = float('inf')  
-      wherei = 0  
-      i = 0  
-      for cen in centers:  
-      temp = distance(des, cen)  
-      if temp < min:  
-      min = temp  
-                    wherei = i  
-                i += 1  
-      histogram[wherei] += 1  
-      return histogram
-  ```
+def get_histogram(centers, image):
+    histogram = [0] * ClusterNumber
+    im = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
+    keypoint, descriptor = features(im, extractor)
+    for des in descriptor:
+        min = float('inf')
+        wherei = 0
+        i = 0
+        for cen in centers:
+            temp = distance(des, cen)
+            if temp < min:
+                min = temp
+                wherei = i
+            i += 1
+        histogram[wherei] += 1
+    return histogram
+```
 
 
 
@@ -85,21 +84,19 @@ now the main job here is  we get an image to the findTopNearest method
 then it returns top N closest words to it
 and we can compare them with the real label  
 ```Python
- def findTopNearest(histograms, targetHistogram, labels, top):  
-      distances = []  
-      for his in histograms:  
-      distances.append(distance(his, targetHistogram))  
-      arr = np.array(distances)  
-      topIndex = (-arr).argsort()[-top:][::-1]  
-      topLabels = []  
-      for i in topIndex:  
-      topLabels.append(labels[i])  
-      return topLabels
+def findTopNearest(histograms, targetHistogram, labels, top):
+    distances = []
+    for his in histograms:
+        distances.append(distance(his, targetHistogram))
+    arr = np.array(distances)
+    topIndex = (-arr).argsort()[-top:][::-1]
+    topLabels = []
+    for i in topIndex:
+        topLabels.append(labels[i])
+    return topLabels
 
-  ```
+ ```
     
-
-
 
 # Results
 we test our BoVW implemintaint in two ways:
