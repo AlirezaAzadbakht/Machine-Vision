@@ -118,8 +118,15 @@ if the top result for test image be the same as real label its true the result w
 
 for k = 150 in Kmeans:
 
-if the top result for test image be the same as real label its true the result was  **36 %** correct
+the result was  **36 %** correct
 
+for k = 250 in Kmeans:
+
+the result was  **42 %** correct
+
+for k = 500 in Kmeans:
+
+the result was  **61 %** correct
 
 
 
