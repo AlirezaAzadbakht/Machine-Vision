@@ -105,13 +105,15 @@ def findTopNearest(histograms, targetHistogram, labels, top):
 
 # Results
 
-for cluster center k  = 50:
+for k = 50 in Kmeans:
 
 if the top result for test image be the same as real label its true the result was  **24 %** correct
 
-for cluster center k = 150:
+for k = 150 in Kmeans:
 
 if the top result for test image be the same as real label its true the result was  **24 %** correct
+
+
 
 
 the reason we get this result is we use 50 centers in Kmeans and it is not enough to cover dataset 
