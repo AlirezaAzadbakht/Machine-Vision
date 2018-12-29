@@ -225,3 +225,5 @@ false
 -------------------------
 24.0
 ```
+
+fun fact: when we increase k size the algorithm confuse and labels all the airplanes a bass :) 
