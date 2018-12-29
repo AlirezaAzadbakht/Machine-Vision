@@ -104,7 +104,7 @@ def findTopNearest(histograms, targetHistogram, labels, top):
 
  ```
 Bag Of Word result : ['airplanes', 'airplanes', 'bass', 'ant', 'bass']
-Labels : airplanes
+Label : airplanes
  ```
 we test our BoVW implementation in two ways:
 
