@@ -21,7 +21,7 @@ this project contains 3 class :
 
 both tester and trainer class use the same methods so we made Methods class for easier use 
 
-# dataset :
+# dataset, Caltech 101_ObjectCategories :
 ![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/airplanes/test/image_0006.jpg)
 ![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/anchor/test/image_0008.jpg)
 ![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Bag-of-Visual-Words/101_ObjectCategories/bass/test/image_0009.jpg)
@@ -118,7 +118,7 @@ if the top result for test image be the same as real label its true the result w
 
 for k = 150 in Kmeans:
 
-if the top result for test image be the same as real label its true the result was  **24 %** correct
+if the top result for test image be the same as real label its true the result was  **36 %** correct
 
 
 
