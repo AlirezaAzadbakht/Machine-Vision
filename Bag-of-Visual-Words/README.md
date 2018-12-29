@@ -16,19 +16,19 @@ this project contains 3 class :
 both tester and trainer class use same methodss so we made Methods class for easier use 
 
 
-# Steps:
+# Trainer Steps:
 
 this implementation follows these simple steps :
 
-## Getting desc
-
+## 1 . Getting descriptor
+with the help of sift algorithm we get all the images in **Caltech  101_ObjectCategories** and save them in a list
    
 
     descriptor_list = []  
     images = []  
     labels = []  
     for filename1 in glob.glob('101_ObjectCategories/*'):  
-      for filename in glob.glob(filename1 + '/*.jpg'):  
+      for filename in glob.glob(filename1 + '/train/*.jpg'):  
       im = cv2.imread(filename)  
       labels.append(filename1[21:])  
       images.append(im)  
@@ -37,134 +37,66 @@ this implementation follows these simple steps :
       for i in descriptor:  
       descriptor_list.append(i)
 
-## Switch to another file
+## 2. Run Kmeans clustering on descriptor list
 
-All your files are listed in the file explorer. You can switch from one to another by clicking a file in the list.
+as the steps in wikipedia said we use kmeans clustering algorihm and use the cluster centers in next step where we use them to create histogram of images 
 
-## Rename a file
+    kmeans = KMeans(n_clusters=ClusterNumber)  
+    kmeans.fit(descriptor_list)
 
-You can rename the current file by clicking the file name in the navigation bar or by clicking the **Rename** button in the file explorer.
+## 3. make our visual word Bag
+now we get the image's descriptor again and compare to the cluster centers that we computed in last step and for each descriptor we plus the value of the nearest cluster center
 
-## Delete a file
+    histograms = []  
+    for im in images:  
+      histograms.append(m.get_histogram(kmeans.cluster_centers_, im))
+get histogram method:
 
-You can delete the current file by clicking the **Remove** button in the file explorer. The file will be moved into the **Trash** folder and automatically deleted after 7 days of inactivity.
-
-## Export a file
-
-You can export the current file by clicking **Export to disk** in the menu. You can choose to export the file as plain Markdown, as HTML using a Handlebars template or as a PDF.
-
-
-# Synchronization
-
-Synchronization is one of the biggest features of StackEdit. It enables you to synchronize any file in your workspace with other files stored in your **Google Drive**, your **Dropbox** and your **GitHub** accounts. This allows you to keep writing on other devices, collaborate with people you share the file with, integrate easily into your workflow... The synchronization mechanism takes place every minute in the background, downloading, merging, and uploading file modifications.
-
-There are two types of synchronization and they can complement each other:
-
-- The workspace synchronization will sync all your files, folders and settings automatically. This will allow you to fetch your workspace on any other device.
-	> To start syncing your workspace, just sign in with Google in the menu.
-
-- The file synchronization will keep one file of the workspace synced with one or multiple files in **Google Drive**, **Dropbox** or **GitHub**.
-	> Before starting to sync files, you must link an account in the **Synchronize** sub-menu.
-
-## Open a file
-
-You can open a file from **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Open from**. Once opened in the workspace, any modification in the file will be automatically synced.
-
-## Save a file
-
-You can save any file of the workspace to **Google Drive**, **Dropbox** or **GitHub** by opening the **Synchronize** sub-menu and clicking **Save on**. Even if a file in the workspace is already synced, you can save it to another location. StackEdit can sync one file with multiple locations and accounts.
-
-## Synchronize a file
-
-Once your file is linked to a synchronized location, StackEdit will periodically synchronize it by downloading/uploading any modification. A merge will be performed if necessary and conflicts will be resolved.
-
-If you just have modified your file and you want to force syncing, click the **Synchronize now** button in the navigation bar.
-
-> **Note:** The **Synchronize now** button is disabled if you have no file to synchronize.
-
-## Manage file synchronization
-
-Since one file can be synced with multiple locations, you can list and manage synchronized locations by clicking **File synchronization** in the **Synchronize** sub-menu. This allows you to list and remove synchronized locations that are linked to your file.
+    def get_histogram(centers, image):  
+      histogram = [0] * ClusterNumber  
+        im = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  
+      keypoint, descriptor = features(im, extractor)  
+      for des in descriptor:  
+      min = float('inf')  
+      wherei = 0  
+      i = 0  
+      for cen in centers:  
+      temp = distance(des, cen)  
+      if temp < min:  
+      min = temp  
+                    wherei = i  
+                i += 1  
+      histogram[wherei] += 1  
+      return histogram
 
 
-# Publication
 
-Publishing in StackEdit makes it simple for you to publish online your files. Once you're happy with a file, you can publish it to different hosting platforms like **Blogger**, **Dropbox**, **Gist**, **GitHub**, **Google Drive**, **WordPress** and **Zendesk**. With [Handlebars templates](http://handlebarsjs.com/), you have full control over what you export.
-
-> Before starting to publish, you must link an account in the **Publish** sub-menu.
-
-## Publish a File
-
-You can publish your file by opening the **Publish** sub-menu and by clicking **Publish to**. For some locations, you can choose between the following formats:
-
-- Markdown: publish the Markdown text on a website that can interpret it (**GitHub** for instance),
-- HTML: publish the file converted to HTML via a Handlebars template (on a blog for example).
-
-## Update a publication
-
-After publishing, StackEdit keeps your file linked to that publication which makes it easy for you to re-publish it. Once you have modified your file and you want to update your publication, click on the **Publish now** button in the navigation bar.
-
-> **Note:** The **Publish now** button is disabled if your file has not been published yet.
-
-## Manage file publication
-
-Since one file can be published to multiple locations, you can list and manage publish locations by clicking **File publication** in the **Publish** sub-menu. This allows you to list and remove publication locations that are linked to your file.
+ **now we are Done here we have our Bag of Visual Words for our dataset and we save it with pickle lib for future works** 
 
 
-# Markdown extensions
+# Tester 
 
-StackEdit extends the standard Markdown syntax by adding extra **Markdown extensions**, providing you with some nice features.
+now the main job here is  we get an image to the findTopNearest method 
+then it returns top N closest words to it
+and we can compare them with the real label  
 
-> **ProTip:** You can disable any **Markdown extension** in the **File properties** dialog.
-
-
-## SmartyPants
-
-SmartyPants converts ASCII punctuation characters into "smart" typographic punctuation HTML entities. For example:
-
-|                |ASCII                          |HTML                         |
-|----------------|-------------------------------|-----------------------------|
-|Single backticks|`'Isn't this fun?'`            |'Isn't this fun?'            |
-|Quotes          |`"Isn't this fun?"`            |"Isn't this fun?"            |
-|Dashes          |`-- is en-dash, --- is em-dash`|-- is en-dash, --- is em-dash|
-
-
-## KaTeX
-
-You can render LaTeX mathematical expressions using [KaTeX](https://khan.github.io/KaTeX/):
-
-The *Gamma function* satisfying $\Gamma(n) = (n-1)!\quad\forall n\in\mathbb N$ is via the Euler integral
-
-$$
-\Gamma(z) = \int_0^\infty t^{z-1}e^{-t}dt\,.
-$$
-
-> You can find more information about **LaTeX** mathematical expressions [here](http://meta.math.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference).
+    def findTopNearest(histograms, targetHistogram, labels, top):  
+      distances = []  
+      for his in histograms:  
+      distances.append(distance(his, targetHistogram))  
+      arr = np.array(distances)  
+      topIndex = (-arr).argsort()[-top:][::-1]  
+      topLabels = []  
+      for i in topIndex:  
+      topLabels.append(labels[i])  
+      return topLabels
 
 
-## UML diagrams
 
-You can render UML diagrams using [Mermaid](https://mermaidjs.github.io/). For example, this will produce a sequence diagram:
 
-```mermaid
-sequenceDiagram
-Alice ->> Bob: Hello Bob, how are you?
-Bob-->>John: How about you John?
-Bob--x Alice: I am good thanks!
-Bob-x John: I am good thanks!
-Note right of John: Bob thinks a long<br/>long time, so long<br/>that the text does<br/>not fit on a row.
+# Results
+we test our BoVW implemintaint in two ways:
 
-Bob-->Alice: Checking with John...
-Alice->John: Yes... John, how are you?
-```
+if the top result for test image be the same as real label its true the result was  **folan %** correct 
 
-And this will produce a flow chart:
-
-```mermaid
-graph LR
-A[Square Rect] -- Link text --> B((Circle))
-A --> C(Round Rect)
-B --> D{Rhombus}
-C --> D
-```
-
+if the result set have more than the half of true labels its true the result was **folan %** correct
