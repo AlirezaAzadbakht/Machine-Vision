@@ -22,9 +22,8 @@ this implementation follows these simple steps :
 
 ## 1 . Getting descriptor
 with the help of sift algorithm we get all the images in **Caltech  101_ObjectCategories** and save them in a list
-   
-
-    descriptor_list = []  
+ ```Python
+ descriptor_list = []  
     images = []  
     labels = []  
     for filename1 in glob.glob('101_ObjectCategories/*'):  
@@ -36,23 +35,30 @@ with the help of sift algorithm we get all the images in **Caltech  101_ObjectCa
       keypoint, descriptor = m.features(image, extractor)  
       for i in descriptor:  
       descriptor_list.append(i)
+  ```
+
+    
 
 ## 2. Run Kmeans clustering on descriptor list
 
 as the steps in wikipedia said we use kmeans clustering algorihm and use the cluster centers in next step where we use them to create histogram of images 
-
-    kmeans = KMeans(n_clusters=ClusterNumber)  
+ ```Python
+ kmeans = KMeans(n_clusters=ClusterNumber)  
     kmeans.fit(descriptor_list)
+  ```
+    
 
 ## 3. make our visual word Bag
 now we get the image's descriptor again and compare to the cluster centers that we computed in last step and for each descriptor we plus the value of the nearest cluster center
-
-    histograms = []  
+  ```Python
+ histograms = []  
     for im in images:  
       histograms.append(m.get_histogram(kmeans.cluster_centers_, im))
+  ```
+    
 get histogram method:
-
-    def get_histogram(centers, image):  
+```Python
+     def get_histogram(centers, image):  
       histogram = [0] * ClusterNumber  
         im = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)  
       keypoint, descriptor = features(im, extractor)  
@@ -68,6 +74,8 @@ get histogram method:
                 i += 1  
       histogram[wherei] += 1  
       return histogram
+  ```
+
 
 
 
@@ -79,8 +87,8 @@ get histogram method:
 now the main job here is  we get an image to the findTopNearest method 
 then it returns top N closest words to it
 and we can compare them with the real label  
-
-    def findTopNearest(histograms, targetHistogram, labels, top):  
+```Python
+ def findTopNearest(histograms, targetHistogram, labels, top):  
       distances = []  
       for his in histograms:  
       distances.append(distance(his, targetHistogram))  
@@ -91,6 +99,8 @@ and we can compare them with the real label
       topLabels.append(labels[i])  
       return topLabels
 
+  ```
+    
 
 
 
