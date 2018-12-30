@@ -92,10 +92,25 @@ this code train our model 20000 times
 
 so from here to the end we just play with the parameters to understand and get to know their job in our CNN 
 
-## Results :
+# Results :
 
 
+with step =20000 it took 2 hours and its accuracy as the log said was **97 %** 
+next, we reduce steps to 10000 and it took  1.5 hours ( laptop's power saver was on ) and accuracy of **61 %**
+next, we get a powerful PC and for 20000 steps it took 1 hour and the accuracy of **96 %**
+next, we play with drop out rate:
+with the rate of  0.8, the accuracy was **34 %** as we expected
+with the rate of 0.6 the accuracy gets better **63 %**
+and the funniest thing is when we set rate to 0.0 the accuracy was **37 %**
+it means if our progress is correct the result for drop out rate 0 and 0.8 are the same 
+as we expected the result for very low and very high drop out rate are bad for CNN 
+for next stem we try to reduce dense layer neurons we cut them to half and the result gets worse ** 87 %**
+then we double them and we get the same result of **95 %**
 
+the next step we try to reduce our second convolutional layer's filters  to 32 and tensorflow crashed then we found the problem and we get the accuracy of **12 %**
+whenever we change the convolution layer filters we get a worse result but when we add another convolution layer we get the accuracy of **88 %**
+
+in the end, these numbers are not reliable because it is possible we broke some parts in the progress we are still trying to figure things out about Convolutional neural network and Tensorflow and we will update and correct the result.
 
 
 
