@@ -6,12 +6,9 @@ this course contains four main projects and one research:
 
 ## 1. Filters
 in this project, we try to implement 3 main filters and transformations in machine vision and an implementation of convolution:
-
  SOBEL FILTER
- 
-CANNY FILTER
-
-HOUGH TRANSFORMATION  
+& CANNY FILTER
+& HOUGH TRANSFORMATION  
 [Readmore](https://github.com/AlirezaAzadbakht/Machine-Vision/tree/master/Filters)
 
 ## 2. sift algorithm
