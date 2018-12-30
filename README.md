@@ -6,6 +6,7 @@ this course contains four main projects and one research:
 
 ## 1. Filters
 in this project, we try to implement 3 main filters and transformations in machine vision and an implementation of convolution:
+
  SOBEL FILTER
  
 CANNY FILTER
@@ -29,9 +30,3 @@ in this project, we try to use tensorflow api to create a Convolutional neural n
  our task here was to reasearch about Recurrent neural networks and their aplications 
 [Readmore](https://github.com/AlirezaAzadbakht/Machine-Vision/tree/master/Recurrent-neural-network)
 
-
-
-
-
-
-Filter File contains the implementation of Sobel Filter, Convolution , Canny filter, and hough Transformation.
