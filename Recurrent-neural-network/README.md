@@ -1,5 +1,7 @@
  # Recurrent Neural Networks (RNN)
 
+![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/C2nhDdwW8AIzf07.jpg)
+
 In this page we share abstract of our study about Recurrent Neural Networks (RNN) and its applications
 
 # Introduction
