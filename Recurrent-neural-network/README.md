@@ -6,7 +6,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
 
 # Introduction
 
- ### what are RNN ?
+ ### what is RNN ?
 
  In a traditional neural network we assume that all inputs (and outputs) are independent of each other.
   But for many tasks that’s a very bad idea. If you want to predict the next word in a sentence you better know which words came before it. 
@@ -35,12 +35,14 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   </p>
   <br>
 
- 
+  ### How does RNN work ?
+
+  
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/rnn.jpg" >
+      _A recurrent neural network and the unfolding in time of the computation involved in its forward computation_
+  </p>
 
 
-
-  <br><br>
- ![alt text](https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/rnn.jpg)
-  _A recurrent neural network and the unfolding in time of the computation involved in its forward computation_
   
   
