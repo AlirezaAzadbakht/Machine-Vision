@@ -47,10 +47,12 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   By unrolling we simply mean that we write out the network for the complete sequence.
    For example, if the sequence we care about is a sentence of 5 words, the network would be unrolled into a 5-layer neural network, one layer for each word. 
    The formulas that govern the computation happening in a RNN are as follows:
-  <br>
+  <br><br>
   - x_t is the input at time step t. For example, x_1 could be a one-hot vector corresponding to the second word of a sentence.
+  <br>
   - s_t is the hidden state at time step t. It’s the “memory” of the network. s_t is calculated based on the previous hidden state and the input at the current step: s_t=f(Ux_t + Ws_{t-1}). 
   The function f usually is a nonlinearity such as tanh or ReLU.  s_{-1}, which is required to calculate the first hidden state, is typically initialized to all zeroes.
+  <br>
   - o_t is the output at step t. For example, if we wanted to predict the next word in a sentence it would be a vector of probabilities across our vocabulary. o_t = \mathrm{softmax}(Vs_t).
     <br><br>
   ** note **:  Unlike a traditional deep neural network, which uses different parameters at each layer, a RNN shares the same parameters (U, V, W above) across all steps. 
