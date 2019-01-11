@@ -111,6 +111,87 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
  Instead of combining RNNs with HMMs, it is possible to train RNNs ‘end-to-end’ for speech recognition.
 This approach exploits the larger state-space and richer dynamics of RNNs compared to HMMs, and avoids the problem of using potentially incorrect alignments as training targets.
 
+
+## Backpropagation Through Time (BPTT)
+
+
+as we said we have (we use tanh instead of ReLu or sigmoid):
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-1.png">
+  
+  </p>
+
+**Note** that there’s a slight change in notation from o to y<sup>^</sup>( y<sup>^</sup> is output of each activation).
+we define our cost function , to be cross entropy , given by:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-2.png">
+  
+  </p>
+  
+  as pervious example we care about is a sentence of 5 words where y<sub>t</sub> is the correct word at time step t,
+  y<sup>^</sup><sub>t</sub> is our prediction . We typically treat the full sequence (sentence) as one training example, so the total error is just the sum of the errors at each time step (word).
+  
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-3.png">
+  
+  </p>
+  
+  
+  our goal is to calculate the gradients of the error with respect to our parameters U, V and W and then learn good parameters using Stochastic Gradient Descent
+  Just like we sum up the errors, we also sum up the gradients at each time step for one training example:
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-4.png">
+  
+  </p>
+  
+  
+  for calculate these gradients we use the chain rule of differentiation. (we use E<sub>3</sub> just to have concrete numbers to work with.)
+    
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-5.png">
+  </p>
+  
+  In the above, z_3 =Vs_3, and \otimes  is the outer product of two vectors. 
+  
+  
+  but gradient for W ( and U ) is different . the chain rule , just as above : 
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-6.png">
+  </p>
+  
+  note that s<sub>3</sub> is tanh(U<sub>x<sub>t</sub></sub> + W<sub>s<sub>2</sub></sub>) and depends on s<sub>2</sub>
+  , which depends on W and s_1, and so on. So if we take the derivative with respect to W we can’t simply treat s_2 as a constant! We need to apply the chain rule again and what we really have is this:
+  
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-7.png">
+  </p>
+  
+  We sum up the contributions of each time step to the gradient. In other words, because W is used in every step up to the output we care about, we need to backpropagate gradients from t=3 through the network all the way to t=0:
+  
+  
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-8.png">
+  </p>
+  
+  
+  note that this is exactly the same as the standard backpropagation algorithm that we use in deep Feedforward Neural Networks. 
+  The key difference is that we sum up the gradients for W at each time step.
+   In a traditional NN we don’t share parameters across layers, so we don’t need to sum anything. 
+   Just like with Backpropagation we could define a delta vector that you pass backwards,
+   
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-9.png">
+  </p>
+  
+  where z<sub>2</sub> = U<sub>x<sub>2</sub></sub> + W<sub> s <sub>1</sub> </sub>
+ 
+ 
+ 
+ 
+
+
+
 ### RNN Network
 
 Given an input _x_ = (x, ... , x<sub>T</sub>) , a standard recurrent neural network (RNN) computes the hidden vector sequence
@@ -186,83 +267,6 @@ bidirectional networks, with Pr(k|t) defined as follows:
  y<sub>t</sub>[k] is the k
 th element of the length K + 1 unnormalised output vector y<sub>t</sub>, and N is the number of bidirectional
 levels.
- 
- 
- 
-## Backpropagation Through Time (BPTT)
-
-
-as we said we have (we use tanh instead of ReLu or sigmoid):
-<p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-1.png">
-  
-  </p>
-
-**Note** that there’s a slight change in notation from o to y<sup>^</sup>( y<sup>^</sup> is output of each activation).
-we define our cost function , to be cross entropy , given by:
-
-<p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-2.png">
-  
-  </p>
-  
-  as pervious example we care about is a sentence of 5 words where y<sub>t</sub> is the correct word at time step t,
-  y<sup>^</sup><sub>t</sub> is our prediction . We typically treat the full sequence (sentence) as one training example, so the total error is just the sum of the errors at each time step (word).
-  
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-3.png">
-  
-  </p>
-  
-  
-  our goal is to calculate the gradients of the error with respect to our parameters U, V and W and then learn good parameters using Stochastic Gradient Descent
-  Just like we sum up the errors, we also sum up the gradients at each time step for one training example:
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-4.png">
-  
-  </p>
-  
-  
-  for calculate these gradients we use the chain rule of differentiation. (we use E<sub>3</sub> just to have concrete numbers to work with.)
-    
-   <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-5.png">
-  </p>
-  
-  In the above, z_3 =Vs_3, and \otimes  is the outer product of two vectors. 
-  
-  
-  but gradient for W ( and U ) is different . the chain rule , just as above : 
-   <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-6.png">
-  </p>
-  
-  note that s<sub>3</sub> is tanh(U<sub>x<sub>t</sub></sub> + W<sub>s<sub>2</sub></sub>) and depends on s<sub>2</sub>
-  , which depends on W and s_1, and so on. So if we take the derivative with respect to W we can’t simply treat s_2 as a constant! We need to apply the chain rule again and what we really have is this:
-  
-   <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-7.png">
-  </p>
-  
-  We sum up the contributions of each time step to the gradient. In other words, because W is used in every step up to the output we care about, we need to backpropagate gradients from t=3 through the network all the way to t=0:
-  
-  
-   <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-8.png">
-  </p>
-  
-  
-  note that this is exactly the same as the standard backpropagation algorithm that we use in deep Feedforward Neural Networks. 
-  The key difference is that we sum up the gradients for W at each time step.
-   In a traditional NN we don’t share parameters across layers, so we don’t need to sum anything. 
-   Just like with Backpropagation we could define a delta vector that you pass backwards,
-   
-  <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-9.png">
-  </p>
-  
-  where z<sub>2</sub> = U<sub>x<sub>2</sub></sub> + W<sub> s <sub>1</sub> </sub>
- 
  
  
  
