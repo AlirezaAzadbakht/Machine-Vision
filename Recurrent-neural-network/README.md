@@ -89,8 +89,15 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    In Language Modelling, input is usually a sequence of words from the data and output will be a sequence of predicted word by the model.
    
    **Speech Recognition:**
+   
    A set of inputs containing phoneme(acoustic signals) from an audio is used as an input. 
    This network will compute the phonemes and produce a phonetic segments with the likelihood of output.
+   
+   **Machine Translation:**
+   
+   In Machine Translation, the input is will be the source language(e.g. Hindi) and the output will be in the target language(e.g. English). 
+   The main difference between Machine Translation and Language modelling is that the output starts only after the complete input has been fed into the network.
+   
    
   
   
