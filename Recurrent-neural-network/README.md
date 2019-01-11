@@ -121,6 +121,8 @@ to T:
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/formule.png">
   </p>
 
+where the W terms denote weight matrices (e.g. W<sub>xh</sub> is the input-hidden weight matrix), the b terms denote bias vectors
+(e.g. bh is hidden bias vector) and H is the hidden layer function. H is usually sigmoid function.
   
  
 
