@@ -144,6 +144,8 @@ hidden vector h.
 
  <p align="center">
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/LSTM.png">
+  <br>
+  Long Short-term Memory Cell
   </p>
   
   one of limitation of RNN is that they are only able to make use of pervious context . In speech recognition, where whole utterances are transcribed at once, there
@@ -154,5 +156,7 @@ then fed forwards to the same output layer
 
  <p align="center">
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/Screenshot%20from%202019-01-11%2020-41-26.png">
+  <br>
+  Bidirectional RNN
   </p>
 
