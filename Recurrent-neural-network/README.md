@@ -65,16 +65,17 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   
   
    <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/typeOfRNN.png" >
-    <br>
-    types of RNN
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/typeOfRNN.png">
+    
+    
+   _types of RNN_
+
   </p>
   
   Each rectangle is a vector and arrows represent functions (e.g. matrix multiply).
    Input vectors are in red, output vectors are in blue and green vectors hold the RNN’s state (more on this soon). 
    From left to right:
    
-   _italic text_
   
   
 
