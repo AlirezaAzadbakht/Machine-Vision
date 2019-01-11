@@ -88,7 +88,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    In this method, the likelihood of a word in a sentence is considered. The probability of the output of a particular time-step is used to sample the words in the next iteration(memory). 
    In Language Modelling, input is usually a sequence of words from the data and output will be a sequence of predicted word by the model.
    
-   **Speech Recognition:*
+   **Speech Recognition:**
    A set of inputs containing phoneme(acoustic signals) from an audio is used as an input. 
    This network will compute the phonemes and produce a phonetic segments with the likelihood of output.
    
