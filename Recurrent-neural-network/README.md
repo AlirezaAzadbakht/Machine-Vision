@@ -123,6 +123,11 @@ to T:
 
 where the W terms denote weight matrices (e.g. W<sub>xh</sub> is the input-hidden weight matrix), the b terms denote bias vectors
 (e.g. b<sub>h</sub> is hidden bias vector) and H is the hidden layer function. H is usually sigmoid function.
+using Long Short-Term Memory (LSTM) architecture which uses memory cell to store informations is better at finding and exploiting long 
+range context , 
+
+
+
 
 instead HMM , focus in end-to-end training ,  where RNNs learn to map directly from acoustic to phonetic sequence.
 we  use the network outputs to parameterise a differentiable distribution Pr(y|x) over all possible phonetic output sequences y given an acoustic input sequence .
