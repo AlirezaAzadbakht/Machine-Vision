@@ -157,14 +157,15 @@ then fed forwards to the same output layer
   </p>
   
   
-  instead HMM , focus in end-to-end training ,  where RNNs learn to map directly from acoustic to phonetic sequence.
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/formula-3.png">
+  
+  </p>
+  
+   instead HMM , focus in end-to-end training ,  where RNNs learn to map directly from acoustic to phonetic sequence.
 we  use the network outputs to parameterise a differentiable distribution Pr(y|x) over all possible phonetic output sequences y given an acoustic input sequence .
 The log-probability log Pr(z|x) of the target output sequence z can then be differentiated with respect to the network weights
 using backpropagation through time , and the whole system can be optimised with gradient descent. We now describe two ways to define the output distribution and hence train the
 network. We refer throughout to the length of x as T, the length of z as U, and the number of possible phonemes as K
 
-<p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/formula-3.png">
-  
-  </p>
   
