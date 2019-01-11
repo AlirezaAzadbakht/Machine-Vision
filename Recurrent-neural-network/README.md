@@ -138,3 +138,6 @@ network. We refer throughout to the length of x as T, the length of z as U, and 
  <p align="center">
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/formula-2.png">
   </p>
+
+σ is the logistic sigmoid function, and i, f, o and c are respectively the input gate, forget gate, output gate and cell activation vectors, all of which are the same size as the
+hidden vector h.
