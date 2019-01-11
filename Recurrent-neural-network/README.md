@@ -16,7 +16,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   <br><br>
   <p align="center">
    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/RNN-rolled-loop.png"  width="150" >
- _Recurrent Neural Networks have loops._
+  Recurrent Neural Networks have loops.
   </p>
    <br>
   
@@ -31,7 +31,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   <br><br>
   <p align="center">
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/RNN-unrolled.png" >
-  _ An unrolled recurrent neural network. _
+    An unrolled recurrent neural network.
   </p>
   <br>
 
