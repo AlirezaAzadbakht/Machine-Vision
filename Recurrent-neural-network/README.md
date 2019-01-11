@@ -52,9 +52,9 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   - x<sub>t</sub> is the input at time step t. For example, x<sub>1</sub> could be a one-hot vector corresponding to the second word of a sentence.
   
   - s<sub>t</sub> is the hidden state at time step t. It’s the “memory” of the network. s<sub>t</sub> is calculated based on the previous hidden state and the input at the current step: s<sub>t</sub> = f (U<sub>x<sub>t</sub></sub> + W<sub>s<sub>{t-1}</sub></sub>). 
-  The function f usually is a nonlinearity such as tanh or ReLU.  s_{-1}, which is required to calculate the first hidden state, is typically initialized to all zeroes.
+  The function f usually is a nonlinearity such as tanh or ReLU.  s<sub>{-1}</sub>, which is required to calculate the first hidden state, is typically initialized to all zeroes.
  
-  - o_t is the output at step t. For example, if we wanted to predict the next word in a sentence it would be a vector of probabilities across our vocabulary. o_t = \mathrm{softmax}(Vs_t).
+  - o<sub>t</sub> is the output at step t. For example, if we wanted to predict the next word in a sentence it would be a vector of probabilities across our vocabulary. o<sub>t</sub> =softmax(V<sub>s<sub>t</sub></sub>).
    
   **Note**:  Unlike a traditional deep neural network, which uses different parameters at each layer, a RNN shares the same parameters (U, V, W above) across all steps. 
   This reflects the fact that we are performing the same task at each step, just with different inputs. 
