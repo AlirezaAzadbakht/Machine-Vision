@@ -98,7 +98,11 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    In Machine Translation, the input is will be the source language(e.g. Hindi) and the output will be in the target language(e.g. English). 
    The main difference between Machine Translation and Language modelling is that the output starts only after the complete input has been fed into the network.
    
+   **Image recognition and characterization:**
    
+   
+  Recurrent Neural Network along with a ConvNet work together to recognize an image and give a description about it if it is unnamed. This combination of neural network works in a beautiful and it produces fascinating results.
+  Here is a visual description about how it goes on doing this, the combined model even aligns the generated words with features found in the images.
   
   
 
