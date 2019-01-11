@@ -177,6 +177,12 @@ network. We refer throughout to the length of x as T, the length of z as U, and 
  RNNs trained with CTC are generally bidirectional, to ensure that every Pr(k|t) depends on the entire input sequence,
 and not just the inputs up to t. In this work we focus on deep
 bidirectional networks, with Pr(k|t) defined as follows:
+
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/formula-5.png">
+  
+  </p>
+
  
  
  
