@@ -217,6 +217,12 @@ we define our cost function , to be cross entropy , given by:
   
   our goal is to calculate the gradients of the error with respect to our parameters U, V and W and then learn good parameters using Stochastic Gradient Descent
   Just like we sum up the errors, we also sum up the gradients at each time step for one training example:
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-4.png">
+  
+  </p>
+  
+  
   
 
  
