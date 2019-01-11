@@ -144,7 +144,7 @@ hidden vector h.
   Long Short-term Memory Cell
   </p>
   
-  one of limitation of RNN is that they are only able to make use of pervious context . In speech recognition, where whole utterances are transcribed at once, there
+  one of limitation of RNN is that they are only able to make use of pervious context . In speech recognition, there
 is no reason not to exploit future context as well.
 Bidirectional RNNs (BRNNs) do this by processing the data in
 both directions with two separate hidden layers, which are
