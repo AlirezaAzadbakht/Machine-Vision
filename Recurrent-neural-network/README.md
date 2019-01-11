@@ -82,6 +82,11 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    5.   Synced sequence input and output (e.g. video classification where we wish to label each frame of the video).
    
    ### what can RNN do ?
+   
+   **Language Modelling and Prediction:**
+   
+   In this method, the likelihood of a word in a sentence is considered. The probability of the output of a particular time-step is used to sample the words in the next iteration(memory). 
+   In Language Modelling, input is usually a sequence of words from the data and output will be a sequence of predicted word by the model.
   
   
 
