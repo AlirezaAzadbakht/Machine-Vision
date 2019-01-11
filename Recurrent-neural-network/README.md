@@ -198,6 +198,7 @@ as we said we have :
   
   </p>
 
+**Note** that there’s a slight change in notation from o to y<sup>^</sup>( y<sup>^</sup> is output ).
 
 
  
