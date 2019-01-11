@@ -54,7 +54,11 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   The function f usually is a nonlinearity such as tanh or ReLU.  s_{-1}, which is required to calculate the first hidden state, is typically initialized to all zeroes.
   <br>
   - o_t is the output at step t. For example, if we wanted to predict the next word in a sentence it would be a vector of probabilities across our vocabulary. o_t = \mathrm{softmax}(Vs_t).
-    <br><br>
-  ** note **:  Unlike a traditional deep neural network, which uses different parameters at each layer, a RNN shares the same parameters (U, V, W above) across all steps. 
+   
+  **Note**:  Unlike a traditional deep neural network, which uses different parameters at each layer, a RNN shares the same parameters (U, V, W above) across all steps. 
   This reflects the fact that we are performing the same task at each step, just with different inputs. 
   This greatly reduces the total number of parameters we need to learn.
+
+
+  **Types Of RNN** 
+
