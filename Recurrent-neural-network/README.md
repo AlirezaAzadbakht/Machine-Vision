@@ -169,3 +169,15 @@ using backpropagation through time , and the whole system can be optimised with 
 network. We refer throughout to the length of x as T, the length of z as U, and the number of possible phonemes as K
 
   
+ ### Connectionist Temporal Classification
+ 
+ for this we use softmax layer to define a separate output ut distribution Pr(k|t) at every step t along the input sequence. 
+ Intuitively the network decides whether to emit any label, or no label, at every timestep.
+ 
+ RNNs trained with CTC are generally bidirectional, to ensure that every Pr(k|t) depends on the entire input sequence,
+and not just the inputs up to t. In this work we focus on deep
+bidirectional networks, with Pr(k|t) defined as follows:
+ 
+ 
+ 
+ 
