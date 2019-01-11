@@ -151,7 +151,7 @@ both directions with two separate hidden layers, which are
 then fed forwards to the same output layer
 
  <p align="center">
-    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/Screenshot%20from%202019-01-11%2020-41-26.png">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/Screenshot%20from%202019-01-11%2020-55-40.png">
   <br>
   Bidirectional RNN
   </p>
