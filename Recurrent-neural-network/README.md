@@ -183,6 +183,9 @@ bidirectional networks, with Pr(k|t) defined as follows:
   
   </p>
 
+ y<sub>t</sub>k] is the k
+th element of the length K + 1 unnormalised output vector yt, and N is the number of bidirectional
+levels.
  
  
  
