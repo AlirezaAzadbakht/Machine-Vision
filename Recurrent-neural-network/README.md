@@ -40,7 +40,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   
   <p align="center">
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/rnn.jpg" >
-      <br>_ A recurrent neural network and the unfolding in time of the computation involved in its forward computation _
+      <br>A recurrent neural network and the unfolding in time of the computation involved in its forward computation
   </p>
   <br>
   The above diagram shows a RNN being unrolled (or unfolded) into a full network. 
