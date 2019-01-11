@@ -269,5 +269,12 @@ bidirectional networks, with Pr(k|t) defined as follows:
 th element of the length K + 1 unnormalised output vector y<sub>t</sub>, and N is the number of bidirectional
 levels.
  
- 
+
+## source
+
+https://medium.com/explore-artificial-intelligence/an-introduction-to-recurrent-neural-networks-72c97bf0912
+http://www.wildml.com/2015/09/recurrent-neural-networks-tutorial-part-1-introduction-to-rnns/
+http://www.wildml.com/2015/10/recurrent-neural-networks-tutorial-part-3-backpropagation-through-time-and-vanishing-gradients/
+https://arxiv.org/pdf/1303.5778.pdf(paper)
+
  
