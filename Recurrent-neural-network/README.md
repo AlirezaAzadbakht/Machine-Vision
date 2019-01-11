@@ -122,7 +122,13 @@ to T:
   </p>
 
 where the W terms denote weight matrices (e.g. W<sub>xh</sub> is the input-hidden weight matrix), the b terms denote bias vectors
-(e.g. bh is hidden bias vector) and H is the hidden layer function. H is usually sigmoid function.
+(e.g. b<sub>h</sub> is hidden bias vector) and H is the hidden layer function. H is usually sigmoid function.
+
+instead HMM , focus in end-to-end training ,  where RNNs learn to map directly from acoustic to phonetic sequence.
+we  use the network outputs to parameterise a differentiable distribution Pr(y|x) over all possible phonetic output sequences y given an acoustic input sequence .
+The log-probability log Pr(z|x) of the target output sequence z can then be differentiated with respect to the network weights
+using backpropagation through time , and the whole system can be optimised with gradient descent. We now describe two ways to define the output distribution and hence train the
+network. We refer throughout to the length of x as T, the length of z as U, and the number of possible phonemes as K
   
  
 
