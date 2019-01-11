@@ -261,6 +261,7 @@ we define our cost function , to be cross entropy , given by:
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-9.png">
   </p>
   
+  where z<sub>2</sub> = U<sub>x<sub>2</sub></sub> + W<sub> s <sub>1</sub> </sub>
  
  
  
