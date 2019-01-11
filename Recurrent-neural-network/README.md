@@ -189,4 +189,16 @@ levels.
  
  
  
+## Backpropagation Through Time (BPTT)
+
+
+as we said we have :
+
+
+
+
+ 
+ 
+ 
+ 
  
