@@ -202,8 +202,11 @@ as we said we have :
 
 we define our cost function , to be cross entropy , given by:
 
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-2.png">
+  
+  </p>
 
- 
  
  
  
