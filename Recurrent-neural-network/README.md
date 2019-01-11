@@ -113,7 +113,9 @@ This approach exploits the larger state-space and richer dynamics of RNNs compar
 
 ### RNN Network
 
-Given an input x = (x<sub>1</sub>)
+Given an input _x_ = (x, ... , x<sub>T</sub>) , a standard recurrent neural network (RNN) computes the hidden vector sequence
+_h_ = (h<sub>1</sub>, ... , h<sub>T</sub>) and output vector sequence _y_ = (y<sub>1</sub>, ... , y<sub>T</sub>) by iterating the following equations from _t_ = 1
+to T:
   
  
 
