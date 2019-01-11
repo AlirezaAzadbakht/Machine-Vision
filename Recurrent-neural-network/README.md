@@ -66,9 +66,8 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   
    <p align="center">
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/typeOfRNN.png">
-    
-    
-   _types of RNN_
+    <br>
+    types of RNN
 
   </p>
   
