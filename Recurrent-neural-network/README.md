@@ -223,6 +223,30 @@ we define our cost function , to be cross entropy , given by:
   </p>
   
   
+  for calculate these gradients we use the chain rule of differentiation. (we use E<sub>3</sub> just to have concrete numbers to work with.)
+    
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-5.png">
+  </p>
+  
+  In the above, z_3 =Vs_3, and \otimes  is the outer product of two vectors. 
+  
+  
+  but gradient for W ( and U ) is different . the chain rule , just as above : 
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-6.png">
+  </p>
+  
+  note that s<sub>3</sub> is tanh(U<sub>x<sub>t</sub></sub> + W<sub>s<sub>2</sub></sub>) and depends on s<sub>2</sub>
+  , which depends on W and s_1, and so on. So if we take the derivative with respect to W we can’t simply treat s_2 as a constant! We need to apply the chain rule again and what we really have is this:
+  
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-7.png">
+  </p>
+  
+  
+  
+  
   
 
  
