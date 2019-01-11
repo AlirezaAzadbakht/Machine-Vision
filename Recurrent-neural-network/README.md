@@ -193,7 +193,10 @@ levels.
 
 
 as we said we have :
-
+<p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-1.png">
+  
+  </p>
 
 
 
