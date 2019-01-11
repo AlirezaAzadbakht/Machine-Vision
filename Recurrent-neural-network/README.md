@@ -209,7 +209,10 @@ we define our cost function , to be cross entropy , given by:
   as pervious example we care about is a sentence of 5 words where y<sub>t</sub> is the correct word at time step t,
   y<sup>^</sup><sub>t</sub> is our prediction . We typically treat the full sequence (sentence) as one training example, so the total error is just the sum of the errors at each time step (word).
   
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-3.png">
   
+  </p>
 
  
  
