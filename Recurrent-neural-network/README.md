@@ -75,11 +75,13 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    Input vectors are in red, output vectors are in blue and green vectors hold the RNN’s state (more on this soon). 
    From left to right:
    
-   1.    without RNN , from fixed size-input to fixed-sized output (e.g. image classification) . 
-   2.    Sequence output (e.g. image captioning takes an image and outputs a sentence of words).
+   1.   without RNN , from fixed size-input to fixed-sized output (e.g. image classification) . 
+   2.   Sequence output (e.g. image captioning takes an image and outputs a sentence of words).
    3.   Sequence input (e.g. sentiment analysis where a given sentence is classified as expressing positive or negative sentiment).
    4.   Sequence input and sequence output (e.g. Machine Translation: an RNN reads a sentence in English and then outputs a sentence in French).   
    5.   Synced sequence input and output (e.g. video classification where we wish to label each frame of the video).
+   
+   ### what can RNN do ?
   
   
 
