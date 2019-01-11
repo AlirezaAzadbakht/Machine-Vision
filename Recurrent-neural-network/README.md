@@ -105,13 +105,8 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
   Here is a visual description about how it goes on doing this, the combined model even aligns the generated words with features found in the images.
   
   
- ## SPEECH RECOGNITION WITH DEEP RECURRENT NEURAL NETWORKS
- 
- Neural networks have a long history in speech recognition,usually in combination with hidden Markov models.
- Instead of combining RNNs with HMMs, it is possible to train RNNs ‘end-to-end’ for speech recognition.
-This approach exploits the larger state-space and richer dynamics of RNNs compared to HMMs, and avoids the problem of using potentially incorrect alignments as training targets.
-
-
+  
+  
 ## Backpropagation Through Time (BPTT)
 
 
@@ -188,9 +183,15 @@ we define our cost function , to be cross entropy , given by:
  
  
  
+   
+  
+  
+  
+ ## SPEECH RECOGNITION WITH DEEP RECURRENT NEURAL NETWORKS
  
-
-
+ Neural networks have a long history in speech recognition,usually in combination with hidden Markov models.
+ Instead of combining RNNs with HMMs, it is possible to train RNNs ‘end-to-end’ for speech recognition.
+This approach exploits the larger state-space and richer dynamics of RNNs compared to HMMs, and avoids the problem of using potentially incorrect alignments as training targets.
 
 ### RNN Network
 
