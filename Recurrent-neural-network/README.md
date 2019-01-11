@@ -198,7 +198,9 @@ as we said we have :
   
   </p>
 
-**Note** that there’s a slight change in notation from o to y<sup>^</sup>( y<sup>^</sup> is output ).
+**Note** that there’s a slight change in notation from o to y<sup>^</sup>( y<sup>^</sup> is output of each activation).
+
+we define our cost function , to be cross entropy , given by:
 
 
  
