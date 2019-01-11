@@ -244,11 +244,23 @@ we define our cost function , to be cross entropy , given by:
     <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-7.png">
   </p>
   
+  We sum up the contributions of each time step to the gradient. In other words, because W is used in every step up to the output we care about, we need to backpropagate gradients from t=3 through the network all the way to t=0:
   
   
+   <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-8.png">
+  </p>
   
   
-
+  note that this is exactly the same as the standard backpropagation algorithm that we use in deep Feedforward Neural Networks. 
+  The key difference is that we sum up the gradients for W at each time step.
+   In a traditional NN we don’t share parameters across layers, so we don’t need to sum anything. 
+   Just like with Backpropagation we could define a delta vector that you pass backwards,
+   
+  <p align="center">
+    <img src="https://raw.githubusercontent.com/AlirezaAzadbakht/Machine-Vision/master/Recurrent-neural-network/images/back-9.png">
+  </p>
+  
  
  
  
