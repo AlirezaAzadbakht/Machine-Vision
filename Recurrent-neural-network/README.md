@@ -49,7 +49,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    The formulas that govern the computation happening in a RNN are as follows:
   
   
-  - x_t is the input at time step t. For example, x_1 could be a one-hot vector corresponding to the second word of a sentence.
+  - x<sub>t</sub> is the input at time step t. For example, x_1 could be a one-hot vector corresponding to the second word of a sentence.
   
   - s_t is the hidden state at time step t. It’s the “memory” of the network. s_t is calculated based on the previous hidden state and the input at the current step: s_t=f(Ux_t + Ws_{t-1}). 
   The function f usually is a nonlinearity such as tanh or ReLU.  s_{-1}, which is required to calculate the first hidden state, is typically initialized to all zeroes.
