@@ -74,6 +74,7 @@ In this page we share abstract of our study about Recurrent Neural Networks (RNN
    Input vectors are in red, output vectors are in blue and green vectors hold the RNN’s state (more on this soon). 
    From left to right:
    
+   _italic text_
   
   
 
